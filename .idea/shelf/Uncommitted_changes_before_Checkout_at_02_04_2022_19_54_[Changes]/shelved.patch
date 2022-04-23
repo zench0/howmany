@@ -1,0 +1,141 @@
+Index: howmany_db.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>-- phpMyAdmin SQL Dump\r\n-- version 5.1.0\r\n-- https://www.phpmyadmin.net/\r\n--\r\n-- Хост: 127.0.0.1:3306\r\n-- Время создания: Апр 02 2022 г., 17:26\r\n-- Версия сервера: 8.0.24\r\n-- Версия PHP: 7.1.33\r\n\r\nSET SQL_MODE = \"NO_AUTO_VALUE_ON_ZERO\";\r\nSTART TRANSACTION;\r\nSET time_zone = \"+00:00\";\r\n\r\n\r\n/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;\r\n/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;\r\n/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;\r\n/*!40101 SET NAMES utf8mb4 */;\r\n\r\n--\r\n-- База данных: `howmany_db`\r\n--\r\n\r\n-- --------------------------------------------------------\r\n\r\n--\r\n-- Структура таблицы `events`\r\n--\r\n\r\nCREATE TABLE `events` (\r\n  `ID` int NOT NULL COMMENT 'ID конференции',\r\n  `Event_name` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Название События',\r\n  `Date` date NOT NULL COMMENT 'Дата',\r\n  `Time` time NOT NULL COMMENT 'Время',\r\n  `Event_Commentary` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Комментарий к событию'\r\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='События, в которых могут находиться участники ';\r\n\r\n-- --------------------------------------------------------\r\n\r\n--\r\n-- Структура таблицы `members`\r\n--\r\n\r\nCREATE TABLE `members` (\r\n  `ID_member` int NOT NULL COMMENT 'ID Участника',\r\n  `ID_Event` int DEFAULT NULL COMMENT 'ID События',\r\n  `member_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'ФИО участника'\r\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Таблица со списком участником';\r\n\r\n--\r\n-- Индексы сохранённых таблиц\r\n--\r\n\r\n--\r\n-- Индексы таблицы `events`\r\n--\r\nALTER TABLE `events`\r\n  ADD PRIMARY KEY (`ID`);\r\n\r\n--\r\n-- Индексы таблицы `members`\r\n--\r\nALTER TABLE `members`\r\n  ADD PRIMARY KEY (`ID_member`),\r\n  ADD KEY `ID_Event` (`ID_Event`);\r\n\r\n--\r\n-- AUTO_INCREMENT для сохранённых таблиц\r\n--\r\n\r\n--\r\n-- AUTO_INCREMENT для таблицы `events`\r\n--\r\nALTER TABLE `events`\r\n  MODIFY `ID` int NOT NULL AUTO_INCREMENT COMMENT 'ID конференции';\r\n\r\n--\r\n-- AUTO_INCREMENT для таблицы `members`\r\n--\r\nALTER TABLE `members`\r\n  MODIFY `ID_member` int NOT NULL AUTO_INCREMENT COMMENT 'ID Участника';\r\n\r\n--\r\n-- Ограничения внешнего ключа сохраненных таблиц\r\n--\r\n\r\n--\r\n-- Ограничения внешнего ключа таблицы `members`\r\n--\r\nALTER TABLE `members`\r\n  ADD CONSTRAINT `members_ibfk_1` FOREIGN KEY (`ID_Event`) REFERENCES `events` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT;\r\nCOMMIT;\r\n\r\n/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;\r\n/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;\r\n/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;\r\n
+===================================================================
+diff --git a/howmany_db.sql b/howmany_db.sql
+--- a/howmany_db.sql	
++++ b/howmany_db.sql	
+@@ -3,7 +3,7 @@
+ -- https://www.phpmyadmin.net/
+ --
+ -- Хост: 127.0.0.1:3306
+--- Время создания: Апр 02 2022 г., 17:26
++-- Время создания: Мар 30 2022 г., 09:29
+ -- Версия сервера: 8.0.24
+ -- Версия PHP: 7.1.33
+ 
+@@ -21,20 +21,6 @@
+ -- База данных: `howmany_db`
+ --
+ 
+--- --------------------------------------------------------
+-
+---
+--- Структура таблицы `events`
+---
+-
+-CREATE TABLE `events` (
+-  `ID` int NOT NULL COMMENT 'ID конференции',
+-  `Event_name` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Название События',
+-  `Date` date NOT NULL COMMENT 'Дата',
+-  `Time` time NOT NULL COMMENT 'Время',
+-  `Event_Commentary` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Комментарий к событию'
+-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='События, в которых могут находиться участники ';
+-
+ -- --------------------------------------------------------
+ 
+ --
+@@ -42,53 +28,76 @@
+ --
+ 
+ CREATE TABLE `members` (
+-  `ID_member` int NOT NULL COMMENT 'ID Участника',
+-  `ID_Event` int DEFAULT NULL COMMENT 'ID События',
+-  `member_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'ФИО участника'
+-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Таблица со списком участником';
++  `ID` int UNSIGNED NOT NULL COMMENT 'Первичный ключ',
++  `Фамилия` varchar(30) NOT NULL,
++  `Имя` varchar(30) NOT NULL,
++  `Отчество` varchar(30) NOT NULL
++) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Ники участников проекта в GitHub';
++
++--
++-- Дамп данных таблицы `members`
++--
++
++INSERT INTO `members` (`ID`, `Фамилия`, `Имя`, `Отчество`) VALUES
++(1, 'Аксёнов', 'Илья', 'Сергеевич'),
++(2, 'Виговская', 'Ирина', 'Александровна'),
++(3, 'Коваленок', 'Артем', 'Алексеевич'),
++(4, 'Самойлов', 'Дмитрий', 'Артурович'),
++(5, 'Яворский', 'Владислав', 'Игоревич');
++
++-- --------------------------------------------------------
++
++--
++-- Структура таблицы `members_github`
++--
++
++CREATE TABLE `members_github` (
++  `ID` int UNSIGNED NOT NULL COMMENT 'Первичный ключ',
++  `GitHub` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'Ник в гитхабе'
++) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Ники участников проекта в GitHub';
++
++--
++-- Дамп данных таблицы `members_github`
++--
++
++INSERT INTO `members_github` (`ID`, `GitHub`) VALUES
++(1, 'zench0'),
++(2, 'IrinaVigovskaya'),
++(3, 'Pred4tor555'),
++(4, 'sadxbastard'),
++(5, 'vladyavorskiy');
+ 
+ --
+ -- Индексы сохранённых таблиц
+ --
+ 
+---
+--- Индексы таблицы `events`
+---
+-ALTER TABLE `events`
+-  ADD PRIMARY KEY (`ID`);
+-
+ --
+ -- Индексы таблицы `members`
+ --
+ ALTER TABLE `members`
+-  ADD PRIMARY KEY (`ID_member`),
+-  ADD KEY `ID_Event` (`ID_Event`);
++  ADD PRIMARY KEY (`ID`);
++
++--
++-- Индексы таблицы `members_github`
++--
++ALTER TABLE `members_github`
++  ADD PRIMARY KEY (`ID`);
+ 
+ --
+ -- AUTO_INCREMENT для сохранённых таблиц
+ --
+ 
+---
+--- AUTO_INCREMENT для таблицы `events`
+---
+-ALTER TABLE `events`
+-  MODIFY `ID` int NOT NULL AUTO_INCREMENT COMMENT 'ID конференции';
+-
+ --
+ -- AUTO_INCREMENT для таблицы `members`
+ --
+ ALTER TABLE `members`
+-  MODIFY `ID_member` int NOT NULL AUTO_INCREMENT COMMENT 'ID Участника';
++  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Первичный ключ', AUTO_INCREMENT=6;
+ 
+ --
+--- Ограничения внешнего ключа сохраненных таблиц
+---
+-
++-- AUTO_INCREMENT для таблицы `members_github`
+ --
+--- Ограничения внешнего ключа таблицы `members`
+---
+-ALTER TABLE `members`
+-  ADD CONSTRAINT `members_ibfk_1` FOREIGN KEY (`ID_Event`) REFERENCES `events` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
++ALTER TABLE `members_github`
++  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Первичный ключ', AUTO_INCREMENT=6;
+ COMMIT;
+ 
+ /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
