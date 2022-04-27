@@ -2,9 +2,9 @@
 header('Content-Type: text/html; charset=utf-8'); //Кодировка
 
 $server = "localhost"; //Имя хоста
-$username = "ID_member"; // Имя пользователя БД
+$username = "root"; // Имя пользователя БД
 $password = ""; // Пароль пользователя.
-$database = "howmany_db.sql"; // Имя базы данных
+$database = "howmany_db"; // Имя базы данных
 $mysqli = new mysqli($server, $username, $password, $database); // Подключение к базе данных
 if ($mysqli->connect_errno) // Проверка успешности соединения
 {
