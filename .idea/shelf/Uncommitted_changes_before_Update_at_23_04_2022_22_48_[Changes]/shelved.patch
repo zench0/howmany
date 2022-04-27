@@ -1,0 +1,51 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e44c1286-3ec0-4bf2-ac26-5b2a4dd45e76\" name=\"Changes\" comment=\"Добавил надпись\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"howmany\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"SET_USER_NAME_GLOBALLY\" value=\"false\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/test.php\" root0=\"FORCE_HIGHLIGHTING\" root1=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"26nDOXGvVPVquYs21sscp5Zafea\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"DatabaseDriversLRU\" value=\"mysql\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e44c1286-3ec0-4bf2-ac26-5b2a4dd45e76\" name=\"Changes\" comment=\"\" />\r\n      <created>1648050425403</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1648050425403</updated>\r\n      <workItem from=\"1648050426870\" duration=\"3064000\" />\r\n      <workItem from=\"1648558065546\" duration=\"475000\" />\r\n      <workItem from=\"1648558572020\" duration=\"1237000\" />\r\n      <workItem from=\"1648560569487\" duration=\"261000\" />\r\n      <workItem from=\"1648560864643\" duration=\"91000\" />\r\n      <workItem from=\"1648561022859\" duration=\"270000\" />\r\n      <workItem from=\"1648561312972\" duration=\"160000\" />\r\n      <workItem from=\"1648561673369\" duration=\"37000\" />\r\n      <workItem from=\"1648621542547\" duration=\"97000\" />\r\n      <workItem from=\"1648621691285\" duration=\"15000\" />\r\n      <workItem from=\"1648621805793\" duration=\"44000\" />\r\n      <workItem from=\"1648907136837\" duration=\"827000\" />\r\n      <workItem from=\"1648909973343\" duration=\"1372000\" />\r\n      <workItem from=\"1648911482331\" duration=\"35000\" />\r\n      <workItem from=\"1648979859050\" duration=\"97000\" />\r\n      <workItem from=\"1649226672153\" duration=\"1313000\" />\r\n      <workItem from=\"1650728851604\" duration=\"305000\" />\r\n      <workItem from=\"1650729176105\" duration=\"4266000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Добавил надпись\">\r\n      <created>1648051695502</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1648051695502</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Добавил надпись\">\r\n      <created>1648559442740</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1648559442740</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Добавил надпись\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Добавил надпись\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e2b33569a5c44d39e728ac19ae52609e854d91c3)
++++ b/.idea/workspace.xml	(date 1650736096201)
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="e44c1286-3ec0-4bf2-ac26-5b2a4dd45e76" name="Changes" comment="Добавил надпись" />
++    <list default="true" id="e44c1286-3ec0-4bf2-ac26-5b2a4dd45e76" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -18,6 +18,7 @@
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+     <option name="SET_USER_NAME_GLOBALLY" value="false" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="HighlightingSettingsPerFile">
+     <setting file="file://$PROJECT_DIR$/test.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+@@ -67,6 +68,7 @@
+       <workItem from="1649226672153" duration="1313000" />
+       <workItem from="1650728851604" duration="305000" />
+       <workItem from="1650729176105" duration="4266000" />
++      <workItem from="1650735732296" duration="361000" />
+     </task>
+     <task id="LOCAL-00001" summary="Добавил надпись">
+       <created>1648051695502</created>
+@@ -82,7 +84,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1648559442740</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Добавил надпись">
++      <created>1650736092486</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1650736092486</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">

@@ -1,0 +1,27 @@
+Index: dbconnect.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\nheader('Content-Type: text/html; charset=utf-8'); //Кодировка\r\n\r\n$server = \"localhost\"; //Имя хоста\r\n$username = \"ID_member\"; // Имя пользователя БД\r\n$password = \"\"; // Пароль пользователя.\r\n$database = \"howmany_db.sql\"; // Имя базы данных\r\n$mysqli = new mysqli($server, $username, $password, $database); // Подключение к базе данных\r\nif ($mysqli->connect_errno) // Проверка успешности соединения\r\n{\r\n    die(\"<p><strong>Ошибка подключения к БД</strong></p><p><strong>Код ошибки: </strong> \". $mysqli->connect_errno .\" </p><p><strong>Описание ошибки:</strong> \".$mysqli->connect_error.\"</p>\");\r\n}\r\n$mysqli->set_charset('utf8'); // Устанавка кодировки подключения\r\n$address_site = \"http://howmany.ru\";\r\n//Переменная, которая будет содержать URL сайта\r\n>?
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/dbconnect.php b/dbconnect.php
+--- a/dbconnect.php	(revision c4cf7a209ecf82078a3fd3b7457189813659e464)
++++ b/dbconnect.php	(date 1650738673073)
+@@ -4,7 +4,7 @@
+ $server = "localhost"; //Имя хоста
+ $username = "ID_member"; // Имя пользователя БД
+ $password = ""; // Пароль пользователя.
+-$database = "howmany_db.sql"; // Имя базы данных
++$database = "howmany_db"; // Имя базы данных
+ $mysqli = new mysqli($server, $username, $password, $database); // Подключение к базе данных
+ if ($mysqli->connect_errno) // Проверка успешности соединения
+ {
+@@ -13,4 +13,4 @@
+ $mysqli->set_charset('utf8'); // Устанавка кодировки подключения
+ $address_site = "http://howmany.ru";
+ //Переменная, которая будет содержать URL сайта
+->?
+\ No newline at end of file
++?>
+\ No newline at end of file
